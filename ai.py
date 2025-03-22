@@ -7,7 +7,7 @@ import pickle
 WINDOW_SIZE = (400, 400)
 PIXEL_SIZE = 20
 ACTIONS = {'left': 'right', 'right': 'left', 'up': 'down', 'down': 'up'}
-Q_TABLE_FILE = "50k_82_31.pkl"
+Q_TABLE_FILE = "q_table.pkl"
 
 def get_state(snake: Snake, apple):
     head_x, head_y = snake.head
@@ -127,5 +127,5 @@ def run_game(visible=True, episodes=1):
         ai.save_q_table()
     pygame.quit()
 
-run_game(visible=True, episodes=1)  # See the AI play
-# run_game(visible=False, episodes=20000)  # Train fast without display
+# run_game(visible=True, episodes=1)  # See the AI play
+run_game(visible=False, episodes=20000)  # Train fast without display
